@@ -422,6 +422,12 @@ bool32 __cdecl LegoRR::Lego_Initialise(void)
 		// Property not defined or invalid, fallback to default colour.
 		legoGlobs2.powerCrystalLv1RGB = legoGlobs.PowerCrystalRGB;
 	}
+	if (!Gods98::Config_GetRGBValue(legoConfig, Main_ID("OreLv1RGB"),
+								    &legoGlobs2.oreLv1RGB.r, &legoGlobs2.oreLv1RGB.g, &legoGlobs2.oreLv1RGB.b))
+	{
+		// Property not defined or invalid, fallback to no colour.
+		legoGlobs2.oreLv1RGB = ColourRGBF { 1.0f, 1.0f, 1.0f };
+	}
 
 
 	Lego_LoadSamples(legoConfig, !Gods98::Graphics_IsReduceSamples());

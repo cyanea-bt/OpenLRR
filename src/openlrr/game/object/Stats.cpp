@@ -950,6 +950,12 @@ bool32 __cdecl LegoRR::StatsObject_SetObjectLevel(LegoRR::LegoObject* liveObj, u
 		StatsObject_RestoreModified(liveObj);
 
 		liveObj->stats = &statsGlobs.objectStats[liveObj->type][liveObj->id][newLevel];
+
+		/// CUSTOM: Support for Lv1 Crystals colour
+		if (newLevel != oldLevel) {
+			LegoObject_SetCrystalPoweredColour(liveObj, !(liveObj->flags3 & LIVEOBJ3_POWEROFF));
+		}
+
 		return true;
 	}
 	return false;

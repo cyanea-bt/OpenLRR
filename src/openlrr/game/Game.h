@@ -739,6 +739,7 @@ struct Lego_Globs2
 	bool resourceTumble; // Crystals and ore generated from rockfalls will tumble out of the wall.
 
 	ColourRGBF powerCrystalLv1RGB; // (cfg: Main::PowerCrystalLv1RGB) Custom colour used for Lv1 CryOre-spawned crystals.
+	ColourRGBF oreLv1RGB; // (cfg: Main::OreLv1RGB) Custom colour used for Lv1 CryOre-spawned ore.
 };
 
 #pragma endregion

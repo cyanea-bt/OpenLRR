@@ -1198,6 +1198,17 @@ void __cdecl LegoRR::LegoObject_SetCrystalPoweredColour(LegoObject* liveObj, boo
 			Gods98::Container_Mesh_SetEmissive(liveObj->other, groupID, colour.r, colour.g, colour.b);
 		}
 	}
+	else if (liveObj->type == LegoObject_Ore && liveObj->id == LegoObject_ID_Ore) {
+		/// CUSTOM: Support for custom Lv1 Ore colour
+		if (powered && liveObj->objLevel != 0) {
+			const ColourRGBF colour = legoGlobs2.oreLv1RGB;
+
+			for (uint32 groupID = 0; groupID < Gods98::Container_Mesh_GetGroupCount(liveObj->other); groupID++) {
+
+				Gods98::Container_Mesh_SetColourAlpha(liveObj->other, groupID, colour.r, colour.g, colour.b, 1.0f);
+			}
+		}
+	}
 }
 
 // <LegoRR.exe @00438720>
