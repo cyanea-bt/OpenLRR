@@ -147,6 +147,11 @@ void __cdecl Gods98::TextWindow_PrintFOverlay(TextWindow* window, bool32 oneFram
 // <LegoRR.exe @00485650>
 bool32 __cdecl Gods98::TextWindow_Update(TextWindow* window, uint32 posFromEnd, real32 time, OUT sint32* lpLowestPoint)
 {
+	return TextWindow_Update_ORIG(window, posFromEnd, time, lpLowestPoint);
+}
+/*
+bool32 __cdecl Gods98::TextWindow_Update(TextWindow* window, uint32 posFromEnd, real32 time, OUT sint32* lpLowestPoint)
+{
 	log_firstcall();
 
 	uint32 loop, firstLine=0, sub;
@@ -311,6 +316,7 @@ bool32 __cdecl Gods98::TextWindow_Update(TextWindow* window, uint32 posFromEnd, 
 	//return posFromEnd;
 	//return lowestPoint + window->font->fontHeight;
 }
+*/
 
 // <LegoRR.exe @004859d0>
 bool32 __cdecl Gods98::TextWindow_UpdateOverlay(TextWindow* window, real32 time, OUT sint32* lpLowestPoint)

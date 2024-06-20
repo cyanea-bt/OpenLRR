@@ -1482,7 +1482,7 @@ bool interop_hook_Gods98_TextWindow(void)
 	result &= hook_write_jmpret(0x004854f0, Gods98::TextWindow_PrintF);
 	result &= hook_write_jmpret(0x00485510, Gods98::TextWindow_VPrintF);
 	result &= hook_write_jmpret(0x004855c0, Gods98::TextWindow_PrintFOverlay);
-	result &= hook_write_jmpret(0x00485650, Gods98::TextWindow_Update);
+	//result &= hook_write_jmpret(0x00485650, Gods98::TextWindow_Update);
 
 	// internal, no need to hook these
 	//result &= hook_write_jmpret(0x004859d0, Gods98::TextWindow_UpdateOverlay);

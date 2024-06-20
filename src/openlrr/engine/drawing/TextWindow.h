@@ -113,6 +113,7 @@ void __cdecl TextWindow_VPrintF(TextWindow* window, uint32 page, const char* msg
 void __cdecl TextWindow_PrintFOverlay(TextWindow* window, bool32 oneFrame, const char* msg, ...);
 
 // <LegoRR.exe @00485650>
+#define TextWindow_Update_ORIG ((bool32 (__cdecl* )(TextWindow* window, uint32 posFromEnd, real32 time, OUT sint32* lpLowestPoint))0x00485650)
 bool32 __cdecl TextWindow_Update(TextWindow* window, uint32 posFromEnd, real32 time, OUT sint32* lpLowestPoint);
 
 // <LegoRR.exe @004859d0>
